@@ -13,15 +13,18 @@ This project focuses on detecting AI-generated images using Resnet-18 on the CIF
 - **Real**: Images from CIFAR-10  
 - **Fake**: Generated using Stable Diffusion
 
+A subset of this sample was used to reduce computational time.
+
 ---
 
 ## Project Structure
 
 ```bash
-├── Code.ipynb        # Main notebook containing code
-├── Presentation Slides.pptx       # Project presentation slides
-├── README.md               # Project documentation
-└── Report.docx        # Report detailing methodology and results
+├── Code.ipynb               # Main notebook containing code
+├── Presentation Slides.pptx # Project presentation slides
+├── README.md                # Project documentation
+├── assets/                  # Folder for visualizations
+└── Report.docx              # Report detailing methodology and results
 ```
 
 ---
@@ -34,7 +37,7 @@ This project focuses on detecting AI-generated images using Resnet-18 on the CIF
 - **Activation Function**: Sigmoid (binary classification)
 - **Regularization**:
   - Early stopping (patience = 3)
-  - Data augmentation (horizontal flip, rotation, color jitter)
+  - Data augmentation (horizontal flip)
 
 ---
 
@@ -42,12 +45,9 @@ This project focuses on detecting AI-generated images using Resnet-18 on the CIF
 
 - **Train / Test Split**: 80 / 20
 - **Train / Val Split**: 80 / 20
-- **Batch Size**: 16
+- **Batch Size**: 16 (chosen using hyperparameter tuning)
 - **Epochs**: ~14 (early stopping applied)
-- **Learning Rate**: 0.0005
-
-**Data Augmentation**:
-- RandomHorizontalFlip
+- **Learning Rate**: 0.0005 (chosen using hyperparameter tuning)
 
 ---
 
@@ -99,7 +99,7 @@ Grad-CAM (Gradient-weighted Class Activation Mapping) was used to visualize whic
 
 
 ### Run the Notebook
-Open and run `Code.ipynb` in Google Colab.
+Open and run `Code.ipynb` in Google Colab. The dataset will directly load from Kaggle.
 
 ---
 
